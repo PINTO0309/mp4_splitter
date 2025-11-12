@@ -70,13 +70,3 @@ uv run mp4sp \
 ```
 
 Upon completion the tool logs progress for each clip and finishes with `All tasks completed.`. The resulting files reside in the output directory.
-
-## Automated publishing
-
-GitHub Actions automatically builds wheels/sdists with `uv` and uploads them to PyPI whenever a GitHub Release is published.
-
-1. Generate a PyPI [project-scoped token](https://pypi.org/help/#apitoken) and add it to the repository secrets as `PYPI_API_TOKEN`.
-2. Bump the version in `pyproject.toml` and update `CHANGELOG`/`README` as needed.
-3. Create a git tag matching the new version (e.g. `v1.1.0`) and publish a GitHub Release.
-
-The workflow (`.github/workflows/release-publish.yml`) ensures the tag matches the project version, runs `uv sync --frozen`, and executes `uv publish --token $PYPI_API_TOKEN`. The release job fails fast if the secret is missing or versions mismatch.
