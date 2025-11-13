@@ -15,6 +15,7 @@ def cut_video(task, safe_mode=False):
             "ffmpeg",
             "-hide_banner",
             "-loglevel", "error",
+            "-nostdin",
             "-y",
             "-i", str(src_path),
             "-ss", start,
@@ -32,6 +33,7 @@ def cut_video(task, safe_mode=False):
             "ffmpeg",
             "-hide_banner",
             "-loglevel", "error",
+            "-nostdin",
             "-y",
             "-ss", start,
             "-to", end,
@@ -42,7 +44,7 @@ def cut_video(task, safe_mode=False):
         ]
 
     try:
-        subprocess.run(cmd, check=True)
+        subprocess.run(cmd, check=True, stdin=subprocess.DEVNULL)
         return f"✅ Done: {output_path.name}"
     except subprocess.CalledProcessError:
         return f"❌ Failed: {src_path.name} ({start} to {end})"
