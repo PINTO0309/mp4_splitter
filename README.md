@@ -4,7 +4,7 @@ Command-line utility for splitting MP4 files into multiple clips based on a CSV 
 
 ## Requirements
 
-- Python 3.12
+- Python 3.10.12 or newer
 - [`ffmpeg`](https://ffmpeg.org/) available on your `PATH`
 
 ## Installation

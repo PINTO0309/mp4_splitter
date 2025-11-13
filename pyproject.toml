@@ -3,13 +3,15 @@ name = "mp4sp"
 version = "1.0.0"
 description = "Split MP4 files into multiple clips from a CSV segment list."
 readme = "README.md"
-requires-python = ">=3.12,<3.13"
+requires-python = ">=3.10.12"
 license = { file = "LICENSE" }
 authors = [{ name = "Katsuya Hyodo" }]
 keywords = ["ffmpeg", "mp4", "video", "split", "cli"]
 classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Operating System :: OS Independent",
 ]
